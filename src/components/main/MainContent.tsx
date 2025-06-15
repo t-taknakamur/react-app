@@ -31,12 +31,14 @@ const MainContent = () => {
 
   return (
     <main className="main-content">
-      <SearchForm onSearch={(p) => loadData(p)} />
+      <div className="search-wrapper">
+        <SearchForm onSearch={(p) => loadData(p)} />
+      </div>
       {loading && <p>読み込み中...</p>}
       {error && <p className="error">{error}</p>}
       {!loading && !error && <ListView items={items} />}
     </main>
   );
-};
+};　　
 
 export default MainContent;
